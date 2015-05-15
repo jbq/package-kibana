@@ -42,8 +42,11 @@ if [ -f "$DEFAULT" ]; then
    . "$DEFAULT"
 fi
 
+if [ "x$KIBANA_HOME" == "x" ]; then
+    KIBANA_HOME="%%DEST%%/kibana"
+fi
+
 # Define other required variables
-KIBANA_HOME=/usr/local/kibana
 export PID_DIR=$PID_DIR
 export GEM_PATH="$KIBANA_HOME/vendor/bundle/ruby/1.*"
 DAEMON_OPTS="$KIBANA_HOME/kibana-daemon.rb"

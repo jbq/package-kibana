@@ -23,7 +23,7 @@ prog="kibana"
 [ -e /etc/sysconfig/$prog ] && . /etc/sysconfig/$prog
 
 if [ "x$KIBANA_HOME" == "x" ]; then
-    KIBANA_HOME="/usr/local/kibana"
+    KIBANA_HOME="%%DEST%%/kibana"
 fi
 
 PID_DIR=${PID_DIR:-'/var/run'}
